@@ -1,0 +1,37 @@
+<html>
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/main_style.css">
+
+    <title>Muenchen Map</title>
+ </head>
+ <body>
+    <div class="section group">
+    	<div class="col span_1_of_2">
+            <label class="mt-2" for="inputFilter"><h3>Filter places</h3></label>
+            <input data-bind = "textInput: filter" type="text"  id="inputFilter"  class="mb-4 form-control" placeholder="Enter place's name">
+
+            <div class="my-3" id='output'></div>
+            <img id='photo'class="mb-3"  src="" alt="">
+            <ul  class="list-group mb-4" data-bind="foreach: visiblePlaces">
+                <li class="list-group-item list-group-item-secondary list-group-item-action" data-bind="text: title, click: $parent.setPlace"></li>
+            </ul>
+    	</div>
+    	<div class="col span_2_of_2">
+            <div id="map"></div>
+    	</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+   <script type="text/javascript" src="Js/knockout-3.2.0.js"></script>
+   <script type="text/javascript" src="Js/app.js"></script>
+   <script async defer
+    src=
+    "https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyAIIgO-4aBDljr_5b5NPg69y2HFh-35U1I&v=3&callback=initMap">
+</script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ </body>
+</html>
